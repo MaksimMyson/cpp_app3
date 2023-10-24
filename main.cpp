@@ -1,27 +1,27 @@
 #include <iostream>
+using namespace std;
 
-int main() {
-    setlocale(LC_ALL, "Ukrainian");
-    int number;
+int main()
+{
+	double numbers[7];
 
-    std::cout << "Введіть чотиризначне число: ";
-    std::cin >> number;
+	int max_number = 0;
 
-    if (number >= 1000 && number <= 9999) {
-        
-        int thousands = number / 1000;
-        int hundreds = (number / 100) % 10;
-        int tens = (number / 10) % 10;
-        int ones = number % 10;
+	for (int i = 0; i < 7; i++)
+	{
+		cout << "Enter number " << i + 1 << ": ";
+		cin >> numbers[i];
+	}
 
-        
-        int new_number = (hundreds * 1000) + (thousands * 100) + (ones * 10) + tens;
+	for (int i = 0; i < 7; i++)
+	{
+		if (numbers[i] > max_number)
+		{
+			max_number = numbers[i];
+		}
+	}
 
-        std::cout << "Змінене число: " << new_number << std::endl;
-    }
-    else {
-        std::cout << "Помилка! Введіть чотиризначне число." << std::endl;
-    }
+	cout << "The largest number is " << max_number << endl;
 
-    return 0;
+	return 0;
 }
